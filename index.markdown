@@ -32,7 +32,10 @@ You can select from these firmware:
 -----
 
 ## ZBDongle-E
-Sonoff Zigbee 3.0 USB Dongle Plus V2 - No hardware flow control  
+Sonoff Zigbee 3.0 USB Dongle Plus V2 - No hardware flow control
+
+***NOTE:*** The latest CP210X Windows driver has known compatibility issues. For devices with the CP2102N serial chip, please install the older version 6.7.0.0 driver: [CP210x VCP Windows](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads).  
+
 ![ZBDongle-E](./assets/images/dongle-e.png)
 <div class="Supported">
     <nabucasa-zigbee-flasher manifest="./assets/manifests/zbdongle-e.json">
