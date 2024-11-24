@@ -36,13 +36,7 @@
 			"url": "https://github.com/darkxst/silabs-firmware-builder/releases/download/20241106/slzb07Mg24_opentread_rcp_2.5.2.0_GitHub-1fceb225b_gsdk_2024.6.2_460800.gbl",
 			"type": "ot-rcp",
 			"version": "2.5.2.0"
-		},
-		{
-			"name": "Unlock Bootloader",
-			"url": "https://raw.githubusercontent.com/darkxst/silabs-firmware-builder/main/firmware_builds/slzb-07/BTL_SLZB07.gbl",
-			"type": "bootloader",
-			"version": "1.0"
-		  }
+		}
 	],
 	"allow_custom_firmware_upload": true
 }
