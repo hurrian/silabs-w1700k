@@ -16,25 +16,25 @@
 		{
 			"name": "Zigbee (EZSP)",
 			"url": "https://raw.githubusercontent.com/darkxst/silabs-firmware-builder/main/firmware_builds/slzb-06m/ncp-uart-hw-v7.4.4.0-slzb-06m-115200.gbl",
-			"type": "ncp-uart-hw",
+			"type": "zigbee_ncp",
 			"version": "7.4.4.0"
 		},
 		{
 			"name": "Zigbee (EZSP SiSDK)",
 			"url": "https://darkxst.github.io/silabs-firmware-builder/releases/20241106/slzb06m_zigbee_ncp_8.0.2.0_115200.gbl",
-			"type": "ncp-uart-hw",
+			"type": "zigbee_ncp",
 			"version": "8.0.2.0"
 		},
 		{
 			"name": "OpenThread",
 			"url": "https://raw.githubusercontent.com/darkxst/silabs-firmware-builder/main/firmware_builds/slzb-06m/ot-rcp-v2.4.4.0-slzb-06m-460800.gbl",
-			"type": "ot-rcp",
+			"type": "openthread_rcp",
 			"version": "2.4.4.0"
 		},
 		{
 			"name": "OpenThread (SiSDK)",
 			"url": "https://darkxst.github.io/silabs-firmware-builder/releases/20241106/slzb06m_opentread_rcp_2.5.2.0_GitHub-1fceb225b_gsdk_2024.6.2_460800.gbl",
-			"type": "ot-rcp",
+			"type": "openthread_rcp",
 			"version": "2.5.2.0"
 		},
 		{
