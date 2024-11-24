@@ -3,7 +3,8 @@
 	"baudrates": {
 		"bootloader": [115200],
 		"ezsp": [115200, 230400],
-		"spinel": [460800]
+		"spinel": [460800],
+		"router": [115200]
 	},
 	"usb_filters": [
 		{
