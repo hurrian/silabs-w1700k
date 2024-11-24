@@ -1,0 +1,48 @@
+{
+	"product_name": "SMLIGHT SLZB-07Mg24",
+	"baudrates": {
+		"bootloader": [115200],
+		"ezsp": [115200, 230400],
+		"spinel": [460800],
+		"router": [115200]
+	},
+	"usb_filters": [
+		{
+			"pid": 60000,
+			"vid": 4292
+		}
+	],
+	"firmwares": [
+		{
+			"name": "Zigbee (EZSP)",
+			"url": "https://raw.githubusercontent.com/darkxst/silabs-firmware-builder/main/firmware_builds/slzb-07mg24/ncp-uart-hw-v7.4.4.0-slzb-07mg24-115200.gbl",
+			"type": "ncp-uart-hw",
+			"version": "7.4.4.0"
+		},
+		{
+			"name": "Zigbee (EZSP SiSDK)",
+			"url": "https://github.com/darkxst/silabs-firmware-builder/releases/download/20241106/slzb07Mg24_zigbee_ncp_8.0.2.0_115200.gbl",
+			"type": "ncp-uart-hw",
+			"version": "8.0.2.0"
+		},
+		{
+			"name": "OpenThread",
+			"url": "https://raw.githubusercontent.com/darkxst/silabs-firmware-builder/main/firmware_builds/slzb-07mg24/ot-rcp-v2.4.4.0-slzb-07mg24-460800.gbl",
+			"type": "ot-rcp",
+			"version": "2.4.4.0"
+		},
+		{
+			"name": "OpenThread (SiSDK)",
+			"url": "https://github.com/darkxst/silabs-firmware-builder/releases/download/20241106/slzb07Mg24_opentread_rcp_2.5.2.0_GitHub-1fceb225b_gsdk_2024.6.2_460800.gbl",
+			"type": "ot-rcp",
+			"version": "2.5.2.0"
+		},
+		{
+			"name": "Unlock Bootloader",
+			"url": "https://raw.githubusercontent.com/darkxst/silabs-firmware-builder/main/firmware_builds/slzb-07/BTL_SLZB07.gbl",
+			"type": "bootloader",
+			"version": "1.0"
+		  }
+	],
+	"allow_custom_firmware_upload": true
+}

@@ -11,6 +11,7 @@ Supported devices:
 * Sonoff ZBDongle-E
 * Easyiot ZB-GW04
 * SMLIGHT SLZB-07
+* SMLIGHT SLZB-07Mg24
 * SMLIGHT SLZB-06M
 
 It will install the most recent recommended builds from [darkxst/silabs-firmware-builder](https://github.com/darkxst/silabs-firmware-builder). If you want the very latest builds, you can use `Custom URL` option.  
@@ -80,6 +81,19 @@ SMLIGHT SLZB-07 -  Hardware flow control
 
 <div class="Supported">
     <nabucasa-zigbee-flasher manifest="./assets/manifests/SLZB07.json">
+        <span slot="button">Connect</span>
+    </nabucasa-zigbee-flasher>
+</div>
+<br>
+
+-----
+
+## SMLIGHT SLZB-07Mg24
+SMLIGHT SLZB-07Mg24 -  Hardware flow control  
+![SMLIGHT SLZB-07](./assets/images/slzb-07.png)  
+
+<div class="Supported">
+    <nabucasa-zigbee-flasher manifest="./assets/manifests/slzb07Mg24.json">
         <span slot="button">Connect</span>
     </nabucasa-zigbee-flasher>
 </div>
