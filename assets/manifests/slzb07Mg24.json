@@ -36,6 +36,12 @@
 			"url": "https://darkxst.github.io/silabs-firmware-builder/releases/20241106/slzb07Mg24_opentread_rcp_2.5.2.0_GitHub-1fceb225b_gsdk_2024.6.2_460800.gbl",
 			"type": "ot-rcp",
 			"version": "2.5.2.0"
+		},
+		{
+			"name": "Zigbee Router",
+			"url": "https://darkxst.github.io/silabs-firmware-builder/releases/20241124/slzb07Mg24_zigbee_router_8.0.2.0_115200.gbl",
+			"type": "zigbee_router",
+			"version": "8.0.2.0"
 		}
 	],
 	"allow_custom_firmware_upload": true
