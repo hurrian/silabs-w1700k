@@ -2,7 +2,6 @@
 	"product_name": "SMLIGHT SLZB-07",
 	"baudrates": {
 		"bootloader": [115200],
-		"cpc": [460800, 115200, 230400],
 		"ezsp": [115200, 230400],
 		"spinel": [460800]
 	},
@@ -20,6 +19,12 @@
 			"version": "7.4.4.0"
 		},
 		{
+			"name": "Zigbee (EZSP SiSDK)",
+			"url": "https://github.com/darkxst/silabs-firmware-builder/releases/download/20241106/slzb07_zigbee_ncp_8.0.2.0_115200.gbl",
+			"type": "ncp-uart-hw",
+			"version": "8.0.2.0"
+		},
+		{
 			"name": "Multi-PAN (RCP)",
 			"url": "https://raw.githubusercontent.com/darkxst/silabs-firmware-builder/main/firmware_builds/slzb-07/rcp-uart-802154-v4.3.1-slzb-07-460800.gbl",
 			"type": "rcp-uart-802154",
@@ -30,6 +35,12 @@
 			"url": "https://raw.githubusercontent.com/darkxst/silabs-firmware-builder/main/firmware_builds/slzb-07/ot-rcp-v2.4.4.0-slzb-07-460800.gbl",
 			"type": "ot-rcp",
 			"version": "2.4.4.0"
+		},
+		{
+			"name": "OpenThread (SiSDK)",
+			"url": "https://github.com/darkxst/silabs-firmware-builder/releases/download/20241106/slzb07_opentread_rcp_2.5.2.0_GitHub-1fceb225b_gsdk_2024.6.2_460800.gbl",
+			"type": "ot-rcp",
+			"version": "2.5.2.0"
 		},
 		{
 			"name": "Unlock Bootloader",
