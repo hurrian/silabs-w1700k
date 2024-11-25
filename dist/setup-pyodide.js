@@ -27,9 +27,6 @@ const MOCKED_MODULES = [
     // Internal modules not bundled by default with pyodide
     { package: 'ssl', module: 'ssl', version: '1.0.0' },
 ];
-const lineEnding = navigator.userAgent.toLowerCase().includes('win')
-    ? '\r\n'
-    : '\n';
 export var PyodideLoadState;
 (function (PyodideLoadState) {
     PyodideLoadState[PyodideLoadState["LOADING_PYODIDE"] = 0] = "LOADING_PYODIDE";
@@ -50,6 +47,7 @@ async function loadPyodide() {
 }
 function parseRequirementsTxt(requirementsTxt) {
     const packages = new Map();
+    const lineEnding = requirementsTxt.includes('\r\n') ? '\r\n' : '\n';
     for (const line of requirementsTxt.trim().split(lineEnding)) {
         const [pkg, version] = line.split('==');
         packages.set(pkg, version);
