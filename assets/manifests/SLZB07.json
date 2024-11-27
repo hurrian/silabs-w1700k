@@ -32,12 +32,6 @@
 			"version": "2.4.4.0"
 		},
 		{
-			"name": "OpenThread (SiSDK)",
-			"url": "https://darkxst.github.io/silabs-firmware-builder/releases/20241106/slzb07_opentread_rcp_2.5.2.0_GitHub-1fceb225b_gsdk_2024.6.2_460800.gbl",
-			"type": "openthread_rcp",
-			"version": "2.5.2.0"
-		},
-		{
 			"name": "Zigbee Router",
 			"url": "https://darkxst.github.io/silabs-firmware-builder/releases/20241124/slzb07_zigbee_router_8.0.2.0_115200.gbl",
 			"type": "zigbee_router",
