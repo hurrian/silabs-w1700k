@@ -19,7 +19,7 @@
   "package": [
     {
       "pathRelativity": "relativeToZap",
-      "path": "../../simplicity_sdk_2024.6.2/app/zcl/zcl-zap.json",
+      "path": "../../simplicity_sdk_2024.12.0/app/zcl/zcl-zap.json",
       "type": "zcl-properties",
       "category": "zigbee",
       "version": 1,
