@@ -33,7 +33,7 @@
 		},
 		{
 			"name": "Zigbee Router",
-			"url": "https://darkxst.github.io/silabs-firmware-builder/releases/20241124/slzb07Mg24_zigbee_router_8.0.2.0_115200.gbl",
+			"url": "https://darkxst.github.io/silabs-firmware-builder/releases/20250107/slzb07Mg24_zigbee_router_8.0.2.0_115200.gbl",
 			"type": "zigbee_router",
 			"version": "8.0.2.0"
 		}
