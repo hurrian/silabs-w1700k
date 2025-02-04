@@ -21,7 +21,7 @@
 		},
 		{
 			"name": "Zigbee (EZSP SiSDK)",
-			"url": "https://darkxst.github.io/silabs-firmware-builder/releases/20241106/slzb07Mg24_zigbee_ncp_8.0.2.0_115200.gbl",
+			"url": "https://darkxst.github.io/silabs-firmware-builder/releases/20250203/slzb07Mg24_zigbee_ncp_8.0.2.0_115200.gbl",
 			"type": "zigbee_ncp",
 			"version": "8.0.2.0"
 		},
