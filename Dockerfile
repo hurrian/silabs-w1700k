@@ -45,11 +45,11 @@ RUN \
     && tar -C /opt -xf arm-gnu-toolchain-12.2.rel1-x86_64-arm-none-eabi.tar.xz \
     && rm arm-gnu-toolchain-12.2.rel1-x86_64-arm-none-eabi.tar.xz
 
-# Simplicity SDK 2024.12.0
+# Simplicity SDK 2024.12.1
 RUN \
-    curl -o simplicity_sdk_2024.12.0.zip -L https://github.com/SiliconLabs/simplicity_sdk/releases/download/v2024.12.0/gecko-sdk.zip \
-    && unzip -q -d simplicity_sdk_2024.12.0 simplicity_sdk_2024.12.0.zip \
-    && rm simplicity_sdk_2024.12.0.zip
+    curl -o simplicity_sdk_2024.12.1.zip -L https://github.com/SiliconLabs/simplicity_sdk/releases/download/v2024.12.1/simplicity-sdk.zip \
+    && unzip -q -d simplicity_sdk_2024.12.1 simplicity_sdk_2024.12.1.zip \
+    && rm simplicity_sdk_2024.12.1.zip
 
 # ZCL Advanced Platform (ZAP) v2024.12.13
 RUN \
