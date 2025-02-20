@@ -26,6 +26,8 @@ You can select from these firmware:
 
 ***NOTE:** Make sure to close anything using your devices serial port (e.g. ZHA, Zigbee2MQTT, Silabs Multiprotocol Add-on)*
 
+* **Linux Users:** make sure your user is added to the `dialout` group.
+
 > Your browser does not support the WebSerial API. Try Chrome or Edge instead.
 {: #notSupported .hidden .serialErr }
 
