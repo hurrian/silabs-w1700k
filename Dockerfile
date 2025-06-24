@@ -1,4 +1,4 @@
-FROM debian:bookworm
+FROM ubuntu:24.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -13,7 +13,7 @@ RUN \
        yq \
        libgl1 \
        make \
-       default-jre-headless \
+       openjdk-21-jre-headless \
        patch \
        python3 \
        python3-ruamel.yaml \
@@ -59,13 +59,13 @@ RUN \
 
 ENV STUDIO_ADAPTER_PACK_PATH="/opt/zap"
 
-ARG USERNAME=builder
+ARG USERNAME=ubuntu
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
-# Create the user
-RUN groupadd --gid $USER_GID $USERNAME \
-    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME
+# # Create the user
+# RUN groupadd --gid $USER_GID $USERNAME \
+#     && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME
 
 USER $USERNAME
 WORKDIR /build
