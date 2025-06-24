@@ -12,6 +12,7 @@ RUN \
        jq \
        yq \
        libgl1 \
+       libglib2.0-0 \
        make \
        openjdk-21-jre-headless \
        patch \
