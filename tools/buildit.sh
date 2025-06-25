@@ -2,6 +2,15 @@
 
 set -e
 
+# Print usage if no arguments provided
+if [[ -z "$1" ]]; then
+    echo "Usage: $0 <manifest> [extra_args]"
+    echo "extra_args: any additional arguments supported by build_project.py"
+    echo ""
+    echo "Example: $0 manifest.yaml --no-clean-build-dir"
+    exit 1
+fi
+
 # Fix `fatal: detected dubious ownership in repository at`
 git config --global --add safe.directory "$(pwd)"
 
@@ -27,8 +36,6 @@ python3 tools/build_project.py \
     --output-dir outputs \
     --output gbl \
     --output hex \
-    --output out
+    --output out \
+    "${@:2}"
 
-# Get the basename of the GBL in `outputs`
-output_basename=$(basename -- $(basename -- $(ls -1 outputs/*.gbl | head -n 1)) .gbl)
-echo "output_basename=$output_basename"
