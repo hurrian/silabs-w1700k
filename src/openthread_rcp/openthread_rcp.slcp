@@ -23,6 +23,7 @@ component:
   - id: rail_util_pti
   - id: bootloader_interface
   - id: clock_manager
+  - id: ot_reset_utils
   - id: toolchain_gcc_lto
 
 
@@ -30,7 +31,6 @@ include:
   - path: .
     file_list:
     - path: app.h
-    - path: reset_util.h  # Originally included from `util/third_party/openthread/src/lib/platform`
 
 source:
   - path: main.c
