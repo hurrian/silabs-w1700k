@@ -546,9 +546,6 @@ def main():
         "-Wall",
         "-Wextra",
         "-Werror",
-        # XXX: Fails due to protocol/openthread/platform-abstraction/efr32/radio.c@RAILCb_Generic
-        # Remove once this is fixed in the SDK!
-        "-Wno-error=unused-but-set-variable",
     ]
 
     output_artifact = (args.build_dir / "build/debug" / base_project_name).with_suffix(
