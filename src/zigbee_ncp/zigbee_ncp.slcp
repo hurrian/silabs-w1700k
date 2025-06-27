@@ -10,6 +10,7 @@ component:
   - id: iostream_usart
     instance:
       - vcom
+  - id: sl_main
   - id: zigbee_debug_print
   - id: iostream_vuart
   - id: token_manager
@@ -27,6 +28,7 @@ component:
   - id: zigbee_debug_extended
   - id: rail_util_rssi
   - id: clock_manager
+  - id: toolchain_gcc_lto
 
 define:
   - name: EMBER_CUSTOM_MAC_FILTER_TABLE_SIZE

@@ -12,7 +12,7 @@ component:
   instance:
     - bootloader
 - id: clock_manager
-- id: iostream_recommended_stream
+- id: iostream_recommended_console
 - id: iostream_usart
   instance:
     - vcom
@@ -20,6 +20,7 @@ component:
 - id: simple_led
   instance:
     - led0
+- id: sl_main
 - id: zigbee_application_bootloader
 - id: zigbee_basic
 - id: zigbee_core_cli
@@ -42,6 +43,8 @@ component:
 - id: zigbee_update_tc_link_key
 - id: zigbee_zcl_cli
 - id: zigbee_zcl_framework_core
+- id: toolchain_gcc_lto
+
 
 config_file:
 - path: config/zcl/zcl_config.zap
@@ -71,7 +74,20 @@ configuration:
   value: 0
 - name: SL_PSA_ITS_SUPPORT_V3_DRIVER
   value: 1
-
+- name: SL_STACK_SIZE
+  value: '1024'
+  condition: 
+    - freertos
+    - device_series_2
+- name: SL_STACK_SIZE
+  value: '32768'
+  condition: 
+    - freertos
+    - device_series_3
+- name: configTIMER_TASK_PRIORITY
+  value: '53'
+- name: configMAX_TASK_NAME_LEN
+  value: '30'
 source:
 - path: main.c
 - path: app.c

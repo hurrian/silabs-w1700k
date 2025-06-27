@@ -44,6 +44,11 @@
 #include "sl_component_catalog.h"
 #include "sl_memory_manager.h"
 
+#if SL_OPENTHREAD_ENABLE_HOST_WAKE_GPIO
+#include "sl_gpio.h"
+sl_gpio_t host_wakeup_gpio;
+#endif
+
 #if OPENTHREAD_CONFIG_MULTIPAN_RCP_ENABLE
 #if OPENTHREAD_CONFIG_MULTIPLE_STATIC_INSTANCE_ENABLE == 0
 #error "Support for multiple OpenThread static instance is disabled."
@@ -113,10 +118,19 @@ void sl_ot_ncp_init(void)
 /******************************************************************************
  * Application Init.
  *****************************************************************************/
+OT_TOOL_WEAK void sl_host_wakeup_init(void)
+{
+#if SL_OPENTHREAD_ENABLE_HOST_WAKE_GPIO
+    host_wakeup_gpio.port = (uint8_t)SL_OPENTHREAD_HOST_WAKEUP_GPIO_PORT;
+    host_wakeup_gpio.pin  = (uint8_t)SL_OPENTHREAD_HOST_WAKEUP_GPIO_PIN;
+    sl_gpio_set_pin_mode(&host_wakeup_gpio, SL_GPIO_MODE_PUSH_PULL, 0);
+#endif
+}
 
 void app_init(void)
 {
     OT_SETUP_RESET_JUMP(argv);
+    sl_host_wakeup_init();
 }
 
 /******************************************************************************
