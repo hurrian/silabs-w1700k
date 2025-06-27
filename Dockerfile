@@ -1,4 +1,4 @@
-FROM debian:bookworm
+FROM ubuntu:24.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -12,13 +12,24 @@ RUN \
        jq \
        yq \
        libgl1 \
+       libglib2.0-0 \
+       locales \
        make \
-       default-jre-headless \
+       openjdk-21-jre-headless \
+       openssh-client \
        patch \
        python3 \
        python3-ruamel.yaml \
        unzip \
        xz-utils
+
+RUN \
+    locale-gen en_US.UTF-8 \
+    && update-locale LANG=en_US.UTF-8
+
+# Workaround for unicode characters in SDK zip
+ENV LANG=en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8
 
 # Install Simplicity Commander (unfortunately no stable URL available, this
 # is known to be working with Commander_linux_x86_64_1v15p0b1306.tar.bz).
@@ -45,11 +56,12 @@ RUN \
     && tar -C /opt -xf arm-gnu-toolchain-12.2.rel1-x86_64-arm-none-eabi.tar.xz \
     && rm arm-gnu-toolchain-12.2.rel1-x86_64-arm-none-eabi.tar.xz
 
-# Simplicity SDK 2024.6.2
-RUN \
-    curl -o simplicity_sdk_2024.6.2.zip -L https://github.com/SiliconLabs/simplicity_sdk/releases/download/v2024.6.2/gecko-sdk.zip \
-    && unzip -q -d simplicity_sdk_2024.6.2 simplicity_sdk_2024.6.2.zip \
-    && rm simplicity_sdk_2024.6.2.zip
+# Simplicity SDK 2024.6.3
+RUN set -e \
+    && curl -L -o simplicity_sdk_2024.6.3.zip https://github.com/SiliconLabs/simplicity_sdk/releases/download/v2024.6.3/simplicity-sdk.zip \
+    && unzip -o -d simplicity_sdk_2024.6.3 simplicity_sdk_2024.6.3.zip || true \
+    && rm simplicity_sdk_2024.6.3.zip \
+    && chown ubuntu:ubuntu -R /simplicity_sdk_2024.6.3
 
 # ZCL Advanced Platform (ZAP) v2024.09.27
 RUN \
@@ -59,13 +71,11 @@ RUN \
 
 ENV STUDIO_ADAPTER_PACK_PATH="/opt/zap"
 
-ARG USERNAME=builder
+ARG USERNAME=ubuntu
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
-# Create the user
-RUN groupadd --gid $USER_GID $USERNAME \
-    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME
+
 
 USER $USERNAME
 WORKDIR /build

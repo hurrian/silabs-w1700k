@@ -59,36 +59,15 @@ ZBDongle-E and ZB-GW04 v1.1 do not support hardware flow control. Yellow, SkyCon
 Use NabuCasa's [Universal-Silabs-Flasher](https://github.com/NabuCasa/universal-silabs-flasher) to flash the `.gbl` files.
 
 
-## Building locally
+## Building locally with VSCode
 
-To build a firmware locally the build container can be reused. If you use VSCode then simply open the included devcontainer. Or you can manually start the
-container locally using Docker, with a build directory bind-mounted, e.g.
+To build firmware locally, simply open this repository in the included devcontainer.
 
+You can then use the `Run Task` feature and select "Select Manifest" to choose the manifest you want to build.
+
+To build manually and keep build artifacts, run:
 ```sh
-docker run --rm -it \
-  --user builder \
-  -v $(pwd)/build:/build \
-  ghcr.io/darkxst/silabs-firmware-builder:4.2.2
-```
-
-To generate a project, use `slc generate`. To replicate/debug build issues in
-an existing GitHub action, it is often helpful to just copy the command from
-the "Generate Firmware Project" step.
-
-```sh
-  slc generate \
-      --with="MGM210PA32JIA,simple_led:board_activity" \
-      --project-file="/gecko_sdk/protocol/openthread/sample-apps/ot-ncp/rcp-uart-802154.slcp" \
-      --export-destination=rcp-uart-802154-yellow \
-      --copy-proj-sources --new-project --force \
-      --configuration=""
-```
-
-Then build it using commands from the "Build Firmware" step:
-
-```sh
-cd rcp-uart-802154-yellow
-make -f rcp-uart-802154.Makefile release
+./tools/buildit.sh <manifest.yaml> --no-clean-build-dir
 ```
 
 ## Support
